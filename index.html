@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Editor Web App</title>
+    <link 
+        rel="stylesheet" 
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+        body {
+            background-color: #181818;
+            color: #fff;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        label, button {
+            font-size: 1.1rem;
+        }
+        .form-control {
+            background-color: #333;
+            color: #fff;
+            border: 1px solid #444;
+        }
+        .form-control:focus {
+            background-color: #444;
+            border-color: #555;
+        }
+        .radio-inline input {
+            margin-right: 10px;
+        }
+        .btn-danger {
+            background-color: #ff4b5c;
+            border: none;
+        }
+        .btn-danger:hover {
+            background-color: #e0434d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <br /><br />
+        <h1 class="text-center">Image Resizer and Converter</h1>
+        <p class="text-center">Resize and convert your images like a pro 📸</p>
+        <form action="/processimage" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <input type="file" name="file" class="form-control" />
+            </div>
+            <div>Choose Format:</div>
+            <label class="radio-inline">
+                <input type="radio" name="format" value=".png" /> PNG
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="format" value=".jpg" /> JPG
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="format" value=".webp" /> WebP
+            </label>
+            <div class="form-group">
+                <label for="width">Width 📏</label>
+                <input class="form-control" type="text" name="width" id="width" placeholder="Enter width" />
+            </div>
+            <div class="form-group">
+                <label for="height">Height 📐</label>
+                <input class="form-control" type="text" name="height" id="height" placeholder="Enter height" />
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-danger btn-block">Download</button>
+            </div>
+        </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+</html>
